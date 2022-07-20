@@ -1,0 +1,66 @@
+.bookride-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.container{
+    margin-top: 50px;
+    border: 2px solid #00308F;
+    width: 60vw;
+    border-radius: 5px;
+}
+.title{
+    color:white;
+    background-color: #00308F;
+    padding-top:5px ;
+    padding-bottom: 5px;
+    padding-left: 5px;;
+}
+.inner-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+}
+label{
+    font-weight: bold;
+}
+.custom-btn{
+    margin: 10px;
+    height: 35px;
+    width: 90px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #00308F;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+input{
+    border: 2px solid lightgrey;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    font-family: cursive;
+    padding-left: 5px;
+    margin-top: 5px;
+}
+.submit-btn{
+    background-color: #4b9cd3;
+}
+.alert{
+    color: red;
+}
+.success{
+    color: green;
+    padding-left: 10px;
+}
+.ng-valid  {
+    border-left: 5px solid #42A948; /* green */
+  }
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  

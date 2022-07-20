@@ -1,0 +1,25 @@
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.site-name{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color:#e75480;
+    font-size: 20px;
+}
+.logout-btn{
+    font-weight: bold;
+    color:#e75480;
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}

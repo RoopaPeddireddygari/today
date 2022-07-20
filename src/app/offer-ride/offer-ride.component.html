@@ -1,0 +1,49 @@
+<div class="bookride-container">
+    <div class="container">
+        <p class="title">Car Ride Registration Form</p>
+        <form [formGroup]="registerForm">
+            <div class="inner-container">
+                <label for="username">Name</label>
+                <input id="username" formControlName="name" />
+                <p *ngIf="registerForm.controls['name'].touched&&registerForm.controls['name'].errors?.['required']" class="alert alert-danger">
+                    *This field is required!
+                </p>
+
+            </div>
+            <div class="inner-container">
+                <label for="username">Start Location</label>
+                <input id="username" class="form-control" formControlName="startLocation" />
+                <p *ngIf="registerForm.controls['startLocation'].touched&&registerForm.controls['startLocation'].errors?.['required']" class="alert alert-danger">
+                    *This field is required!
+                </p>
+            </div>
+            <div class="inner-container">
+                <label for="username">Destination</label>
+                <input id="username" class="form-control" formControlName="destination" />
+                <p *ngIf="registerForm.controls['destination'].touched&&registerForm.controls['destination'].errors?.['required']" class="alert alert-danger">
+                    *This field is required!
+                </p>
+            </div>
+            <div class="inner-container">
+                <label for="username">Car</label>
+                <input id="username" class="form-control" formControlName="car" />
+                <p *ngIf="registerForm.controls['car'].touched&&registerForm.controls['car'].errors?.['required']" class="alert alert-danger">
+                    *This field is required!
+                </p>
+            </div>
+            <div class="inner-container">
+                <label for="username">Seats Available</label>
+                <input id="username" class="form-control" formControlName="seatsAvailable" />
+                <p *ngIf="registerForm.controls['seatsAvailable'].touched&&registerForm.controls['seatsAvailable'].errors?.['required']" class="alert alert-danger">
+                    This field is required!
+                </p>
+                <p *ngIf="registerForm.controls['seatsAvailable'].touched&&registerForm.controls['seatsAvailable'].errors?.['seatsInvalid']" class="alert alert-danger">
+                    {{registerForm.controls['seatsAvailable'].errors?.['seatsInvalid'].message}}
+                </p>
+            </div>
+            <p class="success" *ngIf="isSuccess">Registration Successful!</p>
+            <button type="submit" class="custom-btn submit-btn" (click)="onSubmit()">Submit</button>
+            <button class="custom-btn" (click)="onGoBack()">Go Back</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<nav class="header-container">
+    <p class="site-name">PoolCarz</p>
+    <!-- <button class="logout-btn" [routerLink]="['/login']">Logout</button> -->
+</nav>
+<div class="login-container">
+    <div class="login-dialog">
+        <p class="login-heading">Login</p>
+        <form class="login-form">
+            <div class="row-container">
+                <label for="username" >User Name</label>
+                <input  (blur)="onUserBlur(userName)" id="username" type="text" class="input-field" [(ngModel)]="userName" name="userName" />
+            </div>
+            <p *ngIf="isUserNameErr" class="errorMsg reqErr">*Username is Required</p>
+
+            <br /><br />
+            <div class="row-container">
+                <label for="pwd">Password</label>
+                <input (blur)="onPwdBlur(password)" id="pwd" type="password" class="input-field" [(ngModel)]="password" name="password" />
+            </div>
+            <p *ngIf="isPasswordErr" class="errorMsg reqErr">*Password is Required</p>
+            <button type="submit" class="submit-btn" (click)="onLogin()">Login</button>
+            <p *ngIf="isSubmitted" [ngClass]="message!='Login Successful!'?'errorMsg':'successMsg'">{{message}}</p>
+        </form>
+    </div>
+</div>

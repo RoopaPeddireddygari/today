@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="bookride-container" *ngIf="!isOfferRide">
+    <div class="container">
+        <p class="title">Book a Ride</p>
+        <div class="inner-container">
+            <p>Pool Carz is an online application which enable users to share rides with others. You can either book a
+                ride
+                or offer a ride. Did we mention that this app is advertisement free? To add on top of that its free of
+                cost!
+                So what are you waiting for? Check out the rides available and start PCing!!
+            </p>
+            <div class="dynamic-container">
+                <button (click)="onShowAllRidesClick()" [ngClass]="activeState=='showAllRides'&&isActive?'active-btn':'custom-btn'">Show All Rides
+                </button>
+                <button *ngIf="isActive" (click)="onToOfficeClick()" [ngClass]="activeState=='toOffice'?'active-btn':'custom-btn'">To Office
+                 </button>
+                 <button *ngIf="isActive" (click)="onFromOfficeClick()" [ngClass]="activeState=='fromOffice'?'active-btn':'custom-btn'">From Office
+                 </button>
+                 <button *ngIf="isActive" (click)="onOthersClick()" [ngClass]="activeState=='others'?'active-btn':'custom-btn'">Others
+                 </button>
+            </div>
+            <p *ngIf="isActive&&renderAllRides" class="table-caption">Please select a ride!</p>
+            <table *ngIf="isActive&&renderAllRides">
+                <thead border="1">
+                    <tr>
+                        <th>Start Point</th>
+                        <th>End Point</th>
+                        <th>Seats Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of ridesList | rideFilter:activeState" appMouseHover (click)="onRideSelect(item)">
+                        <td>{{item.pickUp}}</td>
+                        <td>{{item.destination}}</td>
+                        <td>{{item.seatsLeft}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <app-ride-details [rideSelect]="rideObj" *ngIf="rideObj&&renderRide" (bookingEvent)="tableEvent($event)"></app-ride-details>
+            <button class="custom-btn" (click)="onOfferRideClick()">Offer a Ride!</button>
+        </div>
+    </div>
+</div>
+<app-offer-ride *ngIf="isOfferRide" (goBackEvent)="onGoBackInOfferRide($event)" (submitEvent)="onFormSubmitInOfferRide($event)"></app-offer-ride>

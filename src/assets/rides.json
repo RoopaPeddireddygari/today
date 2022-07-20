@@ -1,0 +1,6 @@
+[
+    {"id":1,"offerId":"T100","name":"Ramesh","car":"Audi","seatsLeft":3,"pickUp":"Vanrose Junction","destination":"Office"},
+    {"id":2,"offerId":"T101","name":"Manu","car":"Renault","seatsLeft":2,"pickUp":"PTP","destination":"Office"},
+    {"id":3,"offerId":"T102","name":"Shiva","car":"BMW X5","seatsLeft":7,"pickUp":"Office","destination":"East-Fort"},
+    {"id":4,"offerId":"T103","name":"Rajini","car":"Ford","seatsLeft":5,"pickUp":"Office","destination":"Central Mail"}
+]
